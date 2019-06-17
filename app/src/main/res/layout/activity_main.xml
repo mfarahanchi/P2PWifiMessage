@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--Enable and disable WiFi-->
+    <Button
+        android:id="@+id/onoff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_toStartOf="@+id/connectionStatus"
+        android:text="Wifi On" />
+
+    <!--Discover nearby available peers-->
+    <Button
+        android:id="@+id/discover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:text="Discover" />
+
+    <!--Show all available peers in ListView-->
+    <ListView
+        android:id="@+id/peerListView"
+        android:layout_width="match_parent"
+        android:layout_height="304dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="60dp"
+        android:background="@android:color/darker_gray" />
+
+    <!--Show Message-->
+    <TextView
+        android:id="@+id/readMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/peerListView"
+        android:layout_marginTop="30dp"
+        android:text="Message"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        />
+
+    <!--Write Message-->
+    <EditText
+        android:id="@+id/writeMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_toStartOf="@id/sendButton"/>
+
+    <!--Send Message-->
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text="Send"/>
+
+    <!--Show Connection Status-->
+    <TextView
+        android:id="@+id/connectionStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Connection status"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:visibility="gone" />
+
+    <!-- private mode and group mode -->
+    <ToggleButton
+        android:id="@+id/privateGroupbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/onoff"
+        android:layout_toEndOf="@+id/connectionStatus"
+        android:text="Private mode"
+        android:textOff="private mode"
+        android:textOn="group mode"
+        android:visibility="gone" />
+
+
+</RelativeLayout>
